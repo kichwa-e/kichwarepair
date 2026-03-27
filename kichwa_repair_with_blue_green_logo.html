@@ -134,7 +134,7 @@
 </div>
 <div>
 <label class="text-sm text-gray-600">Phone / WhatsApp</label>
-<input class="w-full mt-1 px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-400" name="phone" placeholder="07xx xxx xxx" required=""/>
+<input type="tel" pattern="[0-9+ \-]{10,20}" title="Please enter a valid phone number (digits, spaces, +, -)" class="w-full mt-1 px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-400" name="phone" placeholder="07xx xxx xxx" required=""/>
 </div>
 <div>
 <label class="text-sm text-gray-600">Device &amp; Issue</label>
