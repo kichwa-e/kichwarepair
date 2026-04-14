@@ -126,19 +126,20 @@
 <div class="bg-white rounded-2xl p-6 shadow-xl">
 <h3 class="text-lg font-semibold">Get a Quick Quote</h3>
 <p class="text-sm text-gray-500">We’ll reply on WhatsApp within minutes.</p>
+<!-- SECURITY: Client-side validation to prevent excessive payload sizes (DoS) on Netlify forms -->
 <form class="mt-4 grid gap-3" data-netlify="true" method="POST" name="quote">
 <input name="form-name" type="hidden" value="quote"/>
 <div>
 <label class="text-sm text-gray-600">Your Name</label>
-<input class="w-full mt-1 px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-400" name="name" placeholder="John Doe" required=""/>
+<input class="w-full mt-1 px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-400" name="name" placeholder="John Doe" required="" maxlength="100"/>
 </div>
 <div>
 <label class="text-sm text-gray-600">Phone / WhatsApp</label>
-<input class="w-full mt-1 px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-400" name="phone" placeholder="07xx xxx xxx" required=""/>
+<input class="w-full mt-1 px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-400" name="phone" type="tel" placeholder="07xx xxx xxx" required="" maxlength="20" pattern="[0-9+\- ]{10,20}"/>
 </div>
 <div>
 <label class="text-sm text-gray-600">Device &amp; Issue</label>
-<textarea class="w-full mt-1 px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-400" name="issue" placeholder="iPhone 11 – cracked screen" rows="3"></textarea>
+<textarea class="w-full mt-1 px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-400" name="issue" placeholder="iPhone 11 – cracked screen" rows="3" required="" maxlength="500"></textarea>
 </div>
 <button class="mt-2 inline-flex justify-center items-center gap-2 bg-brand-600 hover:bg-brand-500 text-white px-5 py-3 rounded-xl font-semibold" type="submit">Request Quote</button>
 </form>
