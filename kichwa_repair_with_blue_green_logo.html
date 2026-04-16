@@ -39,12 +39,30 @@
     </script>
 <!-- Favicon (replace with your own) -->
 <link href="/favicon.ico" rel="icon"/>
-<style>
+<style type="text/tailwindcss">
     /* Smooth scroll for anchor links */
     html { scroll-behavior: smooth; }
     /* Hide scrollbars on number inputs */
     input[type=number]::-webkit-outer-spin-button,
     input[type=number]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+
+    @layer components {
+      .pricing-card {
+        @apply border rounded-3xl p-6 shadow-sm bg-gradient-to-b from-gray-50 to-white;
+      }
+      .pricing-category {
+        @apply text-sm uppercase tracking-wide text-gray-500;
+      }
+      .pricing-price {
+        @apply text-2xl font-bold mt-1;
+      }
+      .pricing-desc {
+        @apply text-sm text-gray-600 mt-2;
+      }
+      .pricing-list {
+        @apply mt-4 text-sm space-y-2;
+      }
+    }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-900 antialiased">
@@ -199,33 +217,33 @@
 </div>
 <div class="mt-8 grid md:grid-cols-3 gap-6">
 <!-- Card 1 -->
-<div class="border rounded-3xl p-6 shadow-sm bg-gradient-to-b from-gray-50 to-white">
-<p class="text-sm uppercase tracking-wide text-gray-500">Screens</p>
-<h3 class="text-2xl font-bold mt-1">KSh 2,500 – 18,000</h3>
-<p class="text-sm text-gray-600 mt-2">Genuine &amp; premium aftermarket available.</p>
-<ul class="mt-4 text-sm space-y-2">
+<div class="pricing-card">
+<p class="pricing-category">Screens</p>
+<h3 class="pricing-price">KSh 2,500 – 18,000</h3>
+<p class="pricing-desc">Genuine &amp; premium aftermarket available.</p>
+<ul class="pricing-list">
 <li>iPhone: KSh 6,500–18,000</li>
 <li>Samsung/OLED: KSh 7,000–16,000</li>
 <li>Tecno/Infinix/Xiaomi: KSh 2,500–9,500</li>
 </ul>
 </div>
 <!-- Card 2 -->
-<div class="border rounded-3xl p-6 shadow-sm bg-gradient-to-b from-gray-50 to-white">
-<p class="text-sm uppercase tracking-wide text-gray-500">Batteries</p>
-<h3 class="text-2xl font-bold mt-1">KSh 1,800 – 8,000</h3>
-<p class="text-sm text-gray-600 mt-2">High‑cycle cells with 90‑day warranty.</p>
-<ul class="mt-4 text-sm space-y-2">
+<div class="pricing-card">
+<p class="pricing-category">Batteries</p>
+<h3 class="pricing-price">KSh 1,800 – 8,000</h3>
+<p class="pricing-desc">High‑cycle cells with 90‑day warranty.</p>
+<ul class="pricing-list">
 <li>iPhone: KSh 3,500–6,500</li>
 <li>Samsung: KSh 3,000–7,000</li>
 <li>Other Android: KSh 1,800–4,500</li>
 </ul>
 </div>
 <!-- Card 3 -->
-<div class="border rounded-3xl p-6 shadow-sm bg-gradient-to-b from-gray-50 to-white">
-<p class="text-sm uppercase tracking-wide text-gray-500">Charging &amp; Others</p>
-<h3 class="text-2xl font-bold mt-1">KSh 1,500 – 7,500</h3>
-<p class="text-sm text-gray-600 mt-2">Ports, speakers, mics, cameras, buttons.</p>
-<ul class="mt-4 text-sm space-y-2">
+<div class="pricing-card">
+<p class="pricing-category">Charging &amp; Others</p>
+<h3 class="pricing-price">KSh 1,500 – 7,500</h3>
+<p class="pricing-desc">Ports, speakers, mics, cameras, buttons.</p>
+<ul class="pricing-list">
 <li>Charging port: KSh 2,500–5,500</li>
 <li>Back camera: KSh 3,500–7,500</li>
 <li>Speaker/Mic: KSh 1,500–3,500</li>
