@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; frame-src https://www.google.com; form-action 'self'; connect-src 'self' https://cdn.tailwindcss.com;"/>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; frame-src https://www.google.com; form-action 'self'; connect-src 'self' https://cdn.tailwindcss.com;"/>
 <title>Kichwa Repair Technology | Fast Phone Repair in Nairobi</title>
 <meta content="Kichwa Repair Technology provides fast, reliable phone and tablet repairs in Nairobi. Screens, batteries, charging ports, data recovery, and more." name="description"/>
 <!-- Open Graph -->
@@ -15,28 +15,7 @@
 <meta content="https://example.com" property="og:url"/>
 <!-- Tailwind CSS (CDN) -->
 <script src="https://cdn.tailwindcss.com"></script>
-<script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              50: '#ecf5ff',
-              100: '#d6eaff',
-              200: '#a6d4ff',
-              300: '#6bb8ff',
-              400: '#3399ff',
-              500: '#004aad', /* blue */
-              600: '#06905a', /* green accent */
-              700: '#056f46',
-              800: '#05593a',
-              900: '#064a32',
-            }
-          }
-        }
-      }
-    }
-    </script>
+<script src="tailwind-config.js"></script>
 <!-- Favicon (replace with your own) -->
 <link href="/favicon.ico" rel="icon"/>
 <style>
@@ -359,14 +338,6 @@
     ]
   }
   </script>
-<script>
-    // Mobile menu toggle
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-
-    // Year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+<script src="app.js"></script>
 </body>
 </html>
