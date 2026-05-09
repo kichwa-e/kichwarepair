@@ -130,15 +130,18 @@
 <input name="form-name" type="hidden" value="quote"/>
 <div>
 <label class="text-sm text-gray-600">Your Name</label>
-<input class="w-full mt-1 px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-400" name="name" placeholder="John Doe" required=""/>
+<!-- 🛡️ Sentinel: Added maxlength="100" to prevent excessively large inputs -->
+<input class="w-full mt-1 px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-400" maxlength="100" name="name" placeholder="John Doe" required=""/>
 </div>
 <div>
 <label class="text-sm text-gray-600">Phone / WhatsApp</label>
-<input class="w-full mt-1 px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-400" name="phone" placeholder="07xx xxx xxx" required=""/>
+<!-- 🛡️ Sentinel: Enforced type="tel", pattern, and maxlength="20" for valid phone number formats -->
+<input class="w-full mt-1 px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-400" maxlength="20" name="phone" pattern="[0-9+ \-]{10,20}" placeholder="07xx xxx xxx" required="" type="tel"/>
 </div>
 <div>
 <label class="text-sm text-gray-600">Device &amp; Issue</label>
-<textarea class="w-full mt-1 px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-400" name="issue" placeholder="iPhone 11 – cracked screen" rows="3"></textarea>
+<!-- 🛡️ Sentinel: Restricted issue text to 500 characters to prevent DoS via large payloads -->
+<textarea class="w-full mt-1 px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-400" maxlength="500" name="issue" placeholder="iPhone 11 – cracked screen" rows="3"></textarea>
 </div>
 <button class="mt-2 inline-flex justify-center items-center gap-2 bg-brand-600 hover:bg-brand-500 text-white px-5 py-3 rounded-xl font-semibold" type="submit">Request Quote</button>
 </form>
