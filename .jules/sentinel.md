@@ -2,3 +2,8 @@
 **Vulnerability:** Missing Content Security Policy (CSP) allowing potential XSS.
 **Learning:** The Tailwind Play CDN (`https://cdn.tailwindcss.com`) works correctly with `script-src` and `style-src` directives, but requires `unsafe-inline` for both due to inline configuration and style injection. Crucially, it does NOT require `unsafe-eval` for basic usage in this project, allowing for a stricter policy than initially expected.
 **Prevention:** Use the following CSP baseline for Tailwind CDN projects: `default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline';`.
+
+## 2024-05-24 - Missing Input Validation on Netlify Forms
+**Vulnerability:** Forms using Netlify integration lacked client-side input validation like length limits and character constraints.
+**Learning:** Because backend validation is handled entirely by Netlify, oversized payloads and malformed data can easily be submitted without immediate frontend rejection.
+**Prevention:** Always implement robust client-side validation (e.g., `maxlength`, `pattern`) as the first line of defense when using serverless form solutions.
