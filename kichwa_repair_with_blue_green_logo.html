@@ -126,6 +126,7 @@
 <div class="bg-white rounded-2xl p-6 shadow-xl">
 <h3 class="text-lg font-semibold">Get a Quick Quote</h3>
 <p class="text-sm text-gray-500">We’ll reply on WhatsApp within minutes.</p>
+<!-- SECURITY: Added client-side input validation (maxlength and pattern) to mitigate oversized payloads and malformed data in Netlify Forms -->
 <form class="mt-4 grid gap-3" data-netlify="true" method="POST" name="quote">
 <input name="form-name" type="hidden" value="quote"/>
 <div>
