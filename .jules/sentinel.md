@@ -2,3 +2,7 @@
 **Vulnerability:** Missing Content Security Policy (CSP) allowing potential XSS.
 **Learning:** The Tailwind Play CDN (`https://cdn.tailwindcss.com`) works correctly with `script-src` and `style-src` directives, but requires `unsafe-inline` for both due to inline configuration and style injection. Crucially, it does NOT require `unsafe-eval` for basic usage in this project, allowing for a stricter policy than initially expected.
 **Prevention:** Use the following CSP baseline for Tailwind CDN projects: `default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline';`.
+## 2025-02-27 - Remove unsafe-inline from CSP
+**Vulnerability:** The HTML file allowed inline scripts (`unsafe-inline` in the CSP), posing an XSS risk.
+**Learning:** Extracting inline configurations for external libraries (like Tailwind CSS) into separate files is required to enforce strict CSPs effectively.
+**Prevention:** Avoid inline scripts; always utilize external `.js` files and avoid using `unsafe-inline` in `script-src` directives.
